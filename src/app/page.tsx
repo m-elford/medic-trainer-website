@@ -3,33 +3,8 @@ import Footer from "@/components/layout/Footer";
 import PhoneMockup from "@/components/ui/PhoneMockup";
 import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
-const showcase = [
-  {
-    title: "Select the drill.",
-    text: "Choose a task, filter by training pack, or randomise the next activity to keep sessions unpredictable.",
-    image: "/images/screenshots/tasks.png",
-  },
-  {
-    title: "Prepare the equipment.",
-    text: "Review anticipated equipment before the timer starts so every repetition includes kit preparation.",
-    image: "/images/screenshots/equipment.png",
-  },
-  {
-    title: "Perform under time.",
-    text: "Run countdown-based drills with evidence checks to reinforce procedural discipline under pressure.",
-    image: "/images/screenshots/timer.png",
-  },
-  {
-    title: "Review the result.",
-    text: "Capture completion time, pass or fail status, and evidence check performance after each drill.",
-    image: "/images/screenshots/home.png",
-  },
-  {
-    title: "Track improvement.",
-    text: "Review training history, pass rates and drill performance across repeated sessions.",
-    image: "/images/screenshots/history.png",
-  },
-];
+import { appScreenshots } from "@/data/screenshots";
+import { betaStats, coreFeatures } from "@/data/features";
 
 export default function Home() {
   return (
@@ -73,11 +48,7 @@ export default function Home() {
 
       <section id="features" className="px-6 py-24">
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
-          {[
-            ["Timed Drills", "Run realistic countdown-based medical training tasks."],
-            ["Equipment Preparation", "Review required kit before commencing each drill."],
-            ["Performance History", "Track completion records and training progression."],
-          ].map(([title, text]) => (
+          {coreFeatures.map(({ title, text }) => (
             <div
               key={title}
               className="rounded-3xl border border-white/10 bg-white/[0.04] p-8"
@@ -105,7 +76,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-20 flex max-w-7xl flex-col gap-24">
-          {showcase.map((item, index) => (
+          {appScreenshots.map((item, index) => (
             <div
               key={item.title}
               className={`grid items-center gap-12 md:grid-cols-2 ${
@@ -141,12 +112,7 @@ export default function Home() {
     />
 
     <div className="mt-16 grid gap-6 md:grid-cols-4">
-      {[
-        ["Timed", "Drills"],
-        ["Equipment", "Preparation"],
-        ["Evidence", "Checks"],
-        ["Offline", "Operation"],
-      ].map(([number, label]) => (
+      {betaStats.map(([number, label]) => (
         <div
           key={label}
           className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 text-center"
