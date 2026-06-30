@@ -7,7 +7,7 @@ type SiteShellProps = {
 
 export default function SiteShell({ children }: SiteShellProps) {
   return (
-    <main className="min-h-screen bg-[#071109] text-[#f4f1e8]">
+    <main className="min-h-screen bg-background text-text-main">
       <Navbar />
       {children}
       <Footer />

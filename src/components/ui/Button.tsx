@@ -13,8 +13,8 @@ export default function Button({
 }: ButtonProps) {
   const styles =
     variant === "primary"
-      ? "bg-[#a8d99e] text-[#071109] hover:bg-[#c0efb7]"
-      : "border border-[#d8c79a] text-[#f4f1e8] hover:bg-[#d8c79a]/10";
+      ? "bg-primary text-background hover:bg-primary-hover"
+      : "border border-secondary text-text-main hover:bg-secondary/10";
 
   return (
     <Link
