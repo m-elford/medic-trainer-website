@@ -6,6 +6,7 @@ import BetaCTA from "@/components/sections/BetaCTA";
 import MissionStatement from "@/components/sections/MissionStatement";
 import MethodPillars from "@/components/sections/MethodPillars";
 import ProductStatement from "@/components/sections/ProductStatement";
+import TrainingEnvironment from "@/components/sections/TrainingEnvironment";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
   <MissionStatement />
   <ProductStatement />
   <MethodPillars />
+  <TrainingEnvironment />
   <FeatureExperience />
   <AppWorkflow />
   <BetaCTA />
