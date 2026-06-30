@@ -1,5 +1,5 @@
 import { appScreenshots } from "@/data/screenshots";
-import PhoneMockup from "@/components/ui/PhoneMockup";
+import DeviceFrame from "@/components/ui/DeviceFrame";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function AppWorkflow() {
@@ -33,7 +33,7 @@ export default function AppWorkflow() {
               </p>
             </div>
 
-            <PhoneMockup src={item.image} alt={item.title} />
+            <DeviceFrame src={item.image} alt={item.title} />
           </div>
         ))}
       </div>
