@@ -1,6 +1,6 @@
 import SiteShell from "@/components/layout/SiteShell";
 import PageHero from "@/components/sections/PageHero";
-import PhoneMockup from "@/components/ui/PhoneMockup";
+import DeviceFrame from "@/components/ui/DeviceFrame";
 
 const features = [
   {
@@ -60,7 +60,7 @@ export default function FeaturesPage() {
                 </p>
               </div>
 
-              <PhoneMockup src={feature.image} alt={feature.title} />
+              <DeviceFrame src={feature.image} alt={feature.title} />
             </div>
           ))}
         </div>
