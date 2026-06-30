@@ -1,6 +1,7 @@
 import { appScreenshots } from "@/data/screenshots";
 import DeviceFrame from "@/components/ui/DeviceFrame";
 import SectionHeader from "@/components/ui/SectionHeader";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function AppWorkflow() {
   return (
@@ -13,7 +14,7 @@ export default function AppWorkflow() {
 
       <div className="mx-auto mt-24 flex max-w-7xl flex-col gap-28">
         {appScreenshots.map((item, index) => (
-          <div
+          <FadeIn
             key={item.title}
             className={`grid items-center gap-14 md:grid-cols-2 ${
               index % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
@@ -34,7 +35,7 @@ export default function AppWorkflow() {
             </div>
 
             <DeviceFrame src={item.image} alt={item.title} />
-          </div>
+          </FadeIn>
         ))}
       </div>
     </section>
