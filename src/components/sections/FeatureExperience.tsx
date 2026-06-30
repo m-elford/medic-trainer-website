@@ -20,6 +20,12 @@ const featureExperience = [
     text: "Evidence checks support consistent after-action review and help users identify what needs to improve.",
     image: "/images/screenshots/home.png",
   },
+  {
+  eyebrow: "Improve",
+  title: "Progress should be measurable.",
+  text: "Training history helps users review completed drills, identify patterns and keep repeating the skills that matter.",
+  image: "/images/screenshots/history.png",
+},
 ];
 
 export default function FeatureExperience() {
