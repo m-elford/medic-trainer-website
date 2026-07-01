@@ -2,78 +2,57 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
 import { navigation } from "@/data/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#071109]/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <img
-            src="/images/logos/logo-main.png"
-            alt="Medic Trainer logo"
-            className="h-10 w-10 rounded-full object-cover"
-          />
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f4f1e8]">
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto mt-5 max-w-7xl px-6">
+        <div className="flex items-center justify-between rounded-full border border-border-soft bg-background/70 px-6 py-4 backdrop-blur-xl">
+
+          <Link href="/" className="group">
+
+            <p className="text-lg font-black uppercase tracking-wide text-text-main transition group-hover:text-primary">
               Medic Trainer
             </p>
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#a8d99e]">
+
+            <p className="text-[11px] uppercase tracking-[0.3em] text-text-muted">
               Tactical Medical Training
             </p>
-          </div>
-        </Link>
 
-        <div className="hidden items-center gap-8 text-sm text-[#d8d8cf] md:flex">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={
-                pathname === item.href
-                  ? "font-bold text-[#a8d99e]"
-                  : "hover:text-[#f4f1e8]"
-              }
-            >
-              {item.label}
-            </Link>
-          ))}
+          </Link>
+
+          <nav className="hidden items-center gap-8 md:flex">
+            {navigation.map((item) => {
+              const active = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-bold uppercase tracking-[0.2em] transition ${
+                    active
+                      ? "text-primary"
+                      : "text-text-muted hover:text-text-main"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <Link
+            href="/beta-testing"
+            className="hidden rounded-full bg-primary px-5 py-3 text-xs font-black uppercase tracking-[0.25em] text-background transition hover:scale-105 lg:inline-flex"
+          >
+            Join Beta
+          </Link>
+
         </div>
-
-        <button
-          className="text-[#f4f1e8] md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-      </nav>
-
-      {open && (
-        <div className="border-t border-white/10 bg-[#071109] px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-5">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={
-                  pathname === item.href
-                    ? "font-bold text-[#a8d99e]"
-                    : "text-[#d8d8cf]"
-                }
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
     </header>
   );
 }

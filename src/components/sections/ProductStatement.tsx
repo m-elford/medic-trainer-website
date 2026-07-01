@@ -1,4 +1,5 @@
 import FadeIn from "@/components/animations/FadeIn";
+import DeviceShowcase from "@/components/device/DeviceShowcase";
 
 export default function ProductStatement() {
   return (
@@ -19,6 +20,17 @@ export default function ProductStatement() {
           repeated exposure to pressure.
         </p>
       </FadeIn>
+
+      <div className="mt-24">
+        <DeviceShowcase
+          variant="triple"
+          images={[
+            { src: "/images/screenshots/tasks.png", alt: "Task selection screen" },
+            { src: "/images/screenshots/timer.png", alt: "Timed drill screen" },
+            { src: "/images/screenshots/history.png", alt: "Training history screen" },
+          ]}
+        />
+      </div>
     </section>
   );
 }
