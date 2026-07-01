@@ -1,5 +1,6 @@
 import FadeIn from "@/components/animations/FadeIn";
 import DeviceShowcase from "@/components/device/DeviceShowcase";
+import { homeContent } from "@/content/home";
 
 export default function ProductStatement() {
   return (
@@ -8,27 +9,22 @@ export default function ProductStatement() {
 
       <FadeIn className="mx-auto max-w-6xl text-center">
         <p className="text-sm font-bold uppercase tracking-[0.4em] text-primary">
-          Training Philosophy
+          {homeContent.statement.eyebrow}
         </p>
 
         <h2 className="mt-8 text-5xl font-black uppercase leading-[0.95] md:text-8xl">
-          Confidence is not built during assessment.
+          {homeContent.statement.title}
         </h2>
 
         <p className="mx-auto mt-10 max-w-3xl text-2xl leading-10 text-text-muted">
-          It is built through deliberate repetition, structured review and
-          repeated exposure to pressure.
+          {homeContent.statement.text}
         </p>
       </FadeIn>
 
       <div className="mt-24">
         <DeviceShowcase
           variant="triple"
-          images={[
-            { src: "/images/screenshots/tasks.png", alt: "Task selection screen" },
-            { src: "/images/screenshots/timer.png", alt: "Timed drill screen" },
-            { src: "/images/screenshots/history.png", alt: "Training history screen" },
-          ]}
+          images={homeContent.statement.devices}
         />
       </div>
     </section>

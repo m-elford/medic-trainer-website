@@ -1,5 +1,6 @@
 import { betaStats } from "@/data/features";
 import Button from "@/components/ui/Button";
+import { homeContent } from "@/content/home";
 
 export default function BetaCTA() {
   return (
@@ -10,21 +11,21 @@ export default function BetaCTA() {
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1fr_0.8fr]">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-primary">
-            Medic Trainer Beta
+            {homeContent.beta.eyebrow}
           </p>
 
           <h2 className="mt-4 text-4xl font-black uppercase leading-tight md:text-6xl">
-            Help refine the training experience.
+            {homeContent.beta.title}
           </h2>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-text-muted">
-            Join the beta programme to test the app workflow, identify usability
-            issues, validate training logic and help shape Medic Trainer before
-            wider release.
+            {homeContent.beta.text}
           </p>
 
           <div className="mt-10">
-            <Button href="/beta-testing">Join Beta Testing</Button>
+            <Button href={homeContent.beta.button.href}>
+              {homeContent.beta.button.label}
+            </Button>
           </div>
         </div>
 
