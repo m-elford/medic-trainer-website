@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://medic-trainer-website-fe5cyabxs-medic-trainer.vercel.app"),
+  metadataBase: new URL(
+    "https://medic-trainer-website-fe5cyabxs-medic-trainer.vercel.app"
+  ),
   title: {
     default: "Medic Trainer",
     template: "%s | Medic Trainer",
@@ -22,8 +35,7 @@ export const metadata: Metadata = {
   creator: "Medic Trainer",
   openGraph: {
     title: "Medic Trainer",
-    description:
-      "Military medical skills. Practised under pressure.",
+    description: "Military medical skills. Practised under pressure.",
     url: "https://medic-trainer-website-fe5cyabxs-medic-trainer.vercel.app",
     siteName: "Medic Trainer",
     images: [
@@ -40,8 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Medic Trainer",
-    description:
-      "Military medical skills. Practised under pressure.",
+    description: "Military medical skills. Practised under pressure.",
     images: ["/images/branding/hero.png"],
   },
   icons: {
@@ -55,7 +66,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-AU">
-      <body>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
