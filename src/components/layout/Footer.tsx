@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import { brand } from "@/brand/constants";
 
 export default function Footer() {
   return (
@@ -10,17 +11,15 @@ export default function Footer() {
 
           <div>
             <p className="text-sm font-black uppercase tracking-[0.35em] text-primary">
-              Medic Trainer
+              {brand.name}
             </p>
 
             <p className="mt-2 text-xs uppercase tracking-[0.35em] text-text-muted">
-              Tactical Medical Training
+              {brand.tagline}
             </p>
 
             <h2 className="mt-8 max-w-md text-3xl font-black uppercase leading-tight">
-              Military Medical Skills.
-              <br />
-              Practised Under Pressure.
+              {brand.headline}
             </h2>
 
             <p className="mt-6 max-w-md leading-8 text-text-muted">
@@ -76,7 +75,7 @@ export default function Footer() {
             </p>
 
             <p className="mt-6 leading-8 text-text-muted">
-              medictrainer.app@gmail.com
+              {brand.email}
             </p>
 
             <div className="mt-10">
@@ -85,7 +84,7 @@ export default function Footer() {
               </p>
 
               <p className="mt-2 text-text-muted">
-                Version 1.0
+                {brand.websiteVersion}
               </p>
 
               <p className="mt-4 text-xs uppercase tracking-[0.25em] text-primary">
@@ -93,7 +92,7 @@ export default function Footer() {
               </p>
 
               <p className="mt-2 text-text-muted">
-                Build 1.0.0 (1)
+                {brand.appVersion}
               </p>
             </div>
           </div>
@@ -103,7 +102,7 @@ export default function Footer() {
         <div className="mt-20 border-t border-border-soft pt-8 flex flex-col gap-3 md:flex-row md:justify-between">
 
           <p className="text-sm text-text-muted">
-            © 2026 Matthew Elford. Medic Trainer.
+             © 2026 {brand.owner}. {brand.name}.
           </p>
 
           <p className="text-sm text-text-muted">
